@@ -1,0 +1,15 @@
+## Generate some random nginx logs
+
+```bash
+$ node generate.js [number of log lines] [filename]
+```
+
+By default `number of log lines` is set to `1000` and `filename` is set to `'./nginx.log'`
+
+## Write logs to BQ
+
+```bash
+$ node write_to_bq.js
+```
+
+Using the same defaults as above
