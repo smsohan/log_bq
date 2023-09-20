@@ -1,4 +1,5 @@
 const fs = require('fs');
+const {NginxLogLine} = require("./nginx_log_line")
 
 // Generate a random IP address
 function generateRandomIp() {
@@ -61,18 +62,17 @@ function writeLogLine(file, logLine) {
 
 // Generate a random nginx log line
 function generateRandomNginxLogLine() {
-  const ipAddress = generateRandomIp();
-  const dateTime = new Date().toISOString();
-  const userAgent = generateRandomUserAgent();
-  const requestMethod = generateRandomRequestMethod();
-  const requestPath = generateRandomRequestPath();
-  const responseStatusCode = generateRandomResponseStatusCode();
-  const responseBytes = generateRandomResponseBytes();
-  const referer = generateRandomReferer();
+  const logLine = new NginxLogLine();
+  logLine.ipAddress = generateRandomIp();
+  logLine.dateTime = new Date().toISOString();
+  logLine.userAgent = generateRandomUserAgent();
+  logLine.requestMethod = generateRandomRequestMethod();
+  logLine.requestPath = generateRandomRequestPath();
+  logLine.responseStatusCode = generateRandomResponseStatusCode();
+  logLine.responseBytes = generateRandomResponseBytes();
+  logLine.referer = generateRandomReferer();
 
-  const logLine = `${ipAddress} ${dateTime} ${userAgent} ${requestMethod} ${requestPath} ${responseStatusCode} ${responseBytes} ${referer}`;
-
-  return logLine;
+  return logLine.toString();
 }
 
 

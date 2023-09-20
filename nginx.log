@@ -1,3 +1,4 @@
-236.168.127.209 2023-09-20T16:12:04.246Z Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36 PUT /errors/500 200 95016 
-96.177.128.227 2023-09-20T16:12:04.247Z Mozilla/5.0 (Linux; Android 13; Pixel 7 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Mobile Safari/537.36 GET /login 500 48065 
-146.53.230.147 2023-09-20T16:12:04.247Z Mozilla/5.0 (Macintosh; Intel Mac OS X 10_16_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36 PUT /healthz 404 50918 
+153.201.118.200 2023-09-20T17:53:10.106Z Mozilla/5.0 (Macintosh; Intel Mac OS X 10_16_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36 PUT /upload 500 46752
+200.52.236.82 2023-09-20T17:53:10.107Z Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36 PUT /upload 500 94539
+92.164.44.216 2023-09-20T17:53:10.107Z curl/7.88.0 PUT /favicon.ico 500 32540
+129.252.217.94 2023-09-20T17:53:10.107Z Mozilla/5.0 (Linux; Android 13; Pixel 7 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Mobile Safari/537.36 POST /index.html 200 8544

@@ -3,7 +3,10 @@ const { Agent } = require("http")
 
 class NginxLogLine {
     constructor(log) {
-        let rest, more
+        if(log === null || log === undefined){
+          return
+        }
+        let rest
         [this.ipAddress, this.dateTime, ...rest] = log.split(' ');
         if(rest){
           this.userAgent = [...rest.slice(0,-4)].join(' ');
@@ -80,15 +83,4 @@ class NginxLogLine {
     }
 }
 
-const numberOfLines = process.argv[2] || 1000;
-const fileName = process.argv[3] || './nginx.log';
-
-const fileDescriptor = fs.openSync(fileName, 'r')
-
-fs.readFileSync(fileName, "utf-8").split("\n").forEach((line, index) => {
-    line = line.trim()
-    if (line.length > 0 && numberOfLines > index) {
-        const nll = new NginxLogLine(line)
-        console.log(index, nll)
-    }
-})
+module.exports = {NginxLogLine};
