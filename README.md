@@ -48,3 +48,8 @@ TBD: Convert this to Terraform.
 $ PROJECT_ID=<GCP PROJECT ID> DATASET=<BQ Dataset name> TABLE=<BQ Table name> ./deploy.sh
 ```
 
+## Trigger the service by uploading the log file
+
+```bash
+$ gsutil cp nginx.log gs://<gcs-bucket-name>/nginx.log
+```
