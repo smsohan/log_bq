@@ -70,16 +70,20 @@ class NginxLogLine {
         this._responseBytes = parseInt(responseBytes, 10);
     }
 
-    get referer() {
-        return this._referer;
-    }
-
-    set referer(referer) {
-        this._referer = referer;
-    }
-
     toString() {
         return `${this.ipAddress} ${this.dateTime} ${this.userAgent} ${this.requestMethod} ${this.requestPath} ${this.responseStatusCode} ${this.responseBytes}`;
+    }
+
+    toRow() {
+        return {
+            ipAddress: this.ipAddress,
+            dateTime: this.dateTime?.slice(0, -1),
+            userAgent: this.userAgent,
+            requestMethod: this.requestMethod,
+            requestPath: this.requestPath,
+            responseStatusCode: this.responseStatusCode,
+            responseBytes: this.responseBytes
+        }
     }
 }
 
