@@ -27,6 +27,7 @@ class NginxLogLine {
     }
 
     set dateTime(dateTime) {
+        //TODO: Convert to the Date type
         this._dateTime = dateTime;
     }
 

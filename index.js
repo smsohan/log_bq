@@ -35,8 +35,8 @@ app.get('/', (req, res) => {
 */
 
 app.post('/', async (req, res) => {
-    console.log("Request Payload: " + JSON.stringify(req.body))
     const storage = new Storage();
+    //TODO: see if this can be streamed instead of loading the whole file in memory.
     const logs = (await storage.bucket(req.body.bucket).file(req.body.name).download()).toString();
 
     const bqRows = []
@@ -48,6 +48,8 @@ app.post('/', async (req, res) => {
     })
 
     const bqWriter = new BqWriter(process.env.PROJECT_ID, process.env.BQ_DATASET_NAME, process.env.BQ_TABLE_NAME);
+    //TODO: Make this smarter so that we can write the data in chunks
+    // and handle errors
     await bqWriter.load(bqRows);
     res.send(`Completed processine the file ${req.body.name}. Loaded ${bqRows.length} rows`);
 });

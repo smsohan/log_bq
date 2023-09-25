@@ -40,6 +40,8 @@ By default `number of log lines` is set to `1000` and `filename` is set to `'./n
 3. Create a trigger to connect Cloud
 4. Create the BigQuery dataset and tables
 
+TBD: Convert this to Terraform.
+
 ## Deploy the service to Cloud Run
 
 ```bash
